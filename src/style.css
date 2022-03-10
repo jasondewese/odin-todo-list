@@ -54,3 +54,39 @@ html {
     width: 75px;
 }
 /*End Header Styling*/
+
+/*Nav Styling*/
+.nav {
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    gap: 30px;
+    padding: 2rem;
+}
+
+.list-wrapper>ul li, .projects-wrapper>ul li{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+
+.projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.projects-wrapper>div {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: -1rem;
+}
+
+.projects-label {
+    font-size: 2rem;
+}
+
+/*End Nav Styling*/
