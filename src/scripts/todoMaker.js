@@ -1,8 +1,7 @@
-import {todo} from './todo.js';
-
 const todoMaker = (() => {
 
     const makeTodo = (todo) => {
+
         const taskWrapper = document.createElement('div');
         taskWrapper.classList.add('task-wrapper');
             const taskLeft = document.createElement('div');
@@ -36,6 +35,7 @@ const todoMaker = (() => {
 
         return taskWrapper;
     } 
+
     
     return {makeTodo};
 })();

@@ -2,6 +2,7 @@ import './reset.css';
 import './style.css';
 import {todo} from './scripts/todo.js';
 import {todoMaker} from './scripts/todoMaker.js';
+import {todoForm} from './scripts/todoForm.js';
 
 
 const myTask = todo('laundry');
@@ -19,6 +20,12 @@ console.log(myTask.getDueDate());
 const newTodo = todoMaker.makeTodo(myTask);
 
 document.querySelector('.main-content').appendChild(newTodo);
+
+const form = todoForm.openTodoForm();
+
+form.firstChild.value = 'hello';
+
+
 
 
 /*
