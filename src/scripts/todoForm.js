@@ -1,4 +1,12 @@
+import {todo} from './todo.js';
+import {todoMaker} from './todoMaker.js';
+
 const todoForm = (() => {
+    const closeTodoForm = () => {
+        const formToClose = document.querySelector('.task-form');
+        formToClose.remove();
+    }
+    
     const _createTodoForm = () => {
         const taskForm = document.createElement('form');
         taskForm.classList.add('task-form');
@@ -9,10 +17,20 @@ const todoForm = (() => {
             addButton.textContent = 'Add';
             addButton.type = 'button';
             addButton.classList.add('add-button');
+
+            addButton.addEventListener('click', function() {
+                const newTodo = todo(document.querySelector('.task-input').value);
+                const newTodoElement = todoMaker.makeTodo(newTodo);
+                document.querySelector('.main-content').appendChild(newTodoElement);
+                closeTodoForm();
+            });
+
             const cancelButton = document.createElement('button');
             cancelButton.type = 'button';
             cancelButton.textContent = 'Cancel';
             cancelButton.classList.add('cancel-button');
+
+            cancelButton.addEventListener('click', closeTodoForm);
 
         taskForm.appendChild(taskInput);
         taskForm.appendChild(addButton);
@@ -28,10 +46,7 @@ const todoForm = (() => {
         return newTaskForm;
     }
 
-    const closeTodoForm = () => {
-        const formToClose = document.querySelector('.task-form');
-        formToClose.remove();
-    }
+    
 
     return {openTodoForm, closeTodoForm};
 
