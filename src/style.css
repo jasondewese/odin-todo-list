@@ -127,11 +127,16 @@ img {
 }
 
 .new-task-label {
-    padding-left: 47px;
+    padding-left: 50px;
 }
 
-.task-left, .task-right {
-    width: 150px;
+.task-name {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.date {
+    padding-right: 50px;
 }
 
 .current-project-name {
@@ -144,6 +149,10 @@ img {
 
 .task-wrapper {
     height: 1.5rem;
+}
+
+.list-icon:hover {
+    cursor: pointer;
 }
 /*End Main Styling*/
 
