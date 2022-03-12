@@ -7,6 +7,7 @@ import { project } from './scripts/project.js';
 import { projectMaker } from './scripts/projectMaker.js';
 import { projectForm } from './scripts/projectForm.js';
 import { projectLibrary } from './scripts/projectLibrary.js';
+import { displayController } from './scripts/displayController.js';
 
 
 const myTask = todo('laundry');
@@ -46,6 +47,8 @@ project2.addTodo(todo("english"));
 projectLibrary.addProject(project2);
 
 console.log( projectLibrary.getProject(1).getTodo(2).getTask() );
+
+displayController.displayProject(project2);
 
 /*
 Icon Credits:

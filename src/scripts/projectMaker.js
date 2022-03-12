@@ -34,7 +34,6 @@ const projectMaker = (() => {
 
         return projectWrapper;
     } 
-
     
     return {makeProject};
 })();
