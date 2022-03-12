@@ -4,6 +4,7 @@ import {todo} from './scripts/todo.js';
 import {todoMaker} from './scripts/todoMaker.js';
 import {todoForm} from './scripts/todoForm.js';
 import { project } from './scripts/project.js';
+import { projectMaker } from './scripts/projectMaker.js';
 
 
 const myTask = todo('laundry');
@@ -35,6 +36,9 @@ newProject.addTodo(todo2);
 
 console.log(newProject.getTodo(0).getTask());
 console.log(newProject.getTodo(1).getTask());
+
+const newProjectElement = projectMaker.makeProject(newProject);
+document.querySelector('.projects-list').appendChild(newProjectElement);
 
 
 /*
