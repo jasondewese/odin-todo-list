@@ -5,11 +5,11 @@ import { projectMaker } from "./projectMaker.js";
 const displayController = (() => {
 
     const displayProject = (project) => {
-        const mainContent = document.querySelector('.main-content');
+        const taskList = document.querySelector('.task-list');
     
         //remove all but first two element2 in .main-content (the add button and project name)
-        while (mainContent.childNodes.length > 2) {
-            mainContent.removeChild(mainContent.lastChild);
+        while (taskList.firstChild) {
+            taskList.removeChild(taskList.firstChild);
         }
 
         document.querySelector('.current-project-name').textContent = project.getName();
@@ -17,7 +17,7 @@ const displayController = (() => {
         for (let i = 0; i < project.getLength(); i++) {
             let currentTodo = project.getTodo(i);
             let newTodoElement = todoMaker.makeTodo(currentTodo);
-            document.querySelector('.main-content').appendChild(newTodoElement);
+            document.querySelector('.task-list').appendChild(newTodoElement);
         }
     }
 

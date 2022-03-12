@@ -14,7 +14,7 @@ const myTask = todo('laundry');
 
 const newTodo = todoMaker.makeTodo(myTask);
 
-document.querySelector('.main-content').appendChild(newTodo);
+document.querySelector('.task-list').appendChild(newTodo);
 
 const form = todoForm.openTodoForm();
 
@@ -48,7 +48,7 @@ projectLibrary.addProject(project2);
 
 console.log( projectLibrary.getProject(1).getTodo(2).getTask() );
 
-displayController.displayProject(project2);
+//displayController.displayProject(project2);
 
 /*
 Icon Credits:

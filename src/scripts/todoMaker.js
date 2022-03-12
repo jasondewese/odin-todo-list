@@ -2,7 +2,7 @@ const todoMaker = (() => {
 
     const makeTodo = (todo) => {
 
-        const taskWrapper = document.createElement('div');
+        const taskWrapper = document.createElement('li');
         taskWrapper.classList.add('task-wrapper');
             const taskLeft = document.createElement('div');
             taskLeft.classList.add('task-left');

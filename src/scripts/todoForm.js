@@ -21,7 +21,7 @@ const todoForm = (() => {
             addButton.addEventListener('click', function() {
                 const newTodo = todo(document.querySelector('.task-input').value);
                 const newTodoElement = todoMaker.makeTodo(newTodo);
-                document.querySelector('.main-content').appendChild(newTodoElement);
+                document.querySelector('.task-list').appendChild(newTodoElement);
                 closeTodoForm();
             });
 
@@ -41,7 +41,7 @@ const todoForm = (() => {
     
     const openTodoForm = () => {
         const newTaskForm = _createTodoForm();
-        document.querySelector('.main-content').appendChild(newTaskForm);
+        document.querySelector('.task-list').appendChild(newTaskForm);
 
         return newTaskForm;
     }
