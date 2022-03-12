@@ -6,6 +6,7 @@ import {todoForm} from './scripts/todoForm.js';
 import { project } from './scripts/project.js';
 import { projectMaker } from './scripts/projectMaker.js';
 import { projectForm } from './scripts/projectForm.js';
+import { projectLibrary } from './scripts/projectLibrary.js';
 
 
 const myTask = todo('laundry');
@@ -33,6 +34,18 @@ document.querySelector('.projects-list').appendChild(newProjectElement);
 
 const newProjectForm = projectForm.openProjectForm();
 
+projectLibrary.addProject(newProject);
+
+console.log( projectLibrary.getProject(0).getName() );
+
+const project2 = project("Homework");
+project2.addTodo(todo("math"));
+project2.addTodo(todo("science"));
+project2.addTodo(todo("english"));
+
+projectLibrary.addProject(project2);
+
+console.log( projectLibrary.getProject(1).getTodo(2).getTask() );
 
 /*
 Icon Credits:
