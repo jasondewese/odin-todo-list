@@ -6,6 +6,9 @@
     </li>
 */
 
+import { displayController } from "./displayController";
+import { projectLibrary } from "./projectLibrary.js";
+
 
 const projectMaker = (() => {
 
@@ -27,6 +30,18 @@ const projectMaker = (() => {
             deleteIcon.src = '../src/images/delete.svg';
             deleteIcon.alt = 'Trash can delete logo';
             deleteIcon.classList.add('list-icon');
+
+            projectName.addEventListener('click', function() {
+                displayController.displayProject(project);
+            });
+
+            listIcon.addEventListener('click', function() {
+                displayController.displayProject(project);
+            });
+
+            deleteIcon.addEventListener('click', function() {
+                //projectLibrary.removeProject(  );
+            });
 
         projectWrapper.appendChild(listIcon);
         projectWrapper.appendChild(projectName);

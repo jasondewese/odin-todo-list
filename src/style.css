@@ -151,7 +151,7 @@ img {
     height: 1.5rem;
 }
 
-.list-icon:hover {
+.list-icon:hover, .project-name:hover, .new-project-wrapper:hover, .check-lists-item:hover, button:hover {
     cursor: pointer;
 }
 /*End Main Styling*/

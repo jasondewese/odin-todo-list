@@ -22,7 +22,11 @@ const projectLibrary = (() => {
         _currentProject = index;
     }
 
-    return {addProject, removeProject, getProject, getCurrentProject, setCurrentProject};
+    const getProjectListLength = () => {
+        return _projectList.length;
+    }
+
+    return {addProject, removeProject, getProject, getCurrentProject, setCurrentProject, getProjectListLength};
 })();
 
 export {projectLibrary};
