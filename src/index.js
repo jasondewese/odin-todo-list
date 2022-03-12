@@ -5,19 +5,10 @@ import {todoMaker} from './scripts/todoMaker.js';
 import {todoForm} from './scripts/todoForm.js';
 import { project } from './scripts/project.js';
 import { projectMaker } from './scripts/projectMaker.js';
+import { projectForm } from './scripts/projectForm.js';
 
 
 const myTask = todo('laundry');
-
-console.log(myTask.getTask());
-
-myTask.setTask('vacuum');
-
-console.log(myTask.getTask());
-
-myTask.setDueDate('Monday');
-
-console.log(myTask.getDueDate());
 
 const newTodo = todoMaker.makeTodo(myTask);
 
@@ -39,6 +30,8 @@ console.log(newProject.getTodo(1).getTask());
 
 const newProjectElement = projectMaker.makeProject(newProject);
 document.querySelector('.projects-list').appendChild(newProjectElement);
+
+const newProjectForm = projectForm.openProjectForm();
 
 
 /*

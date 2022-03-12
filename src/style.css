@@ -170,7 +170,7 @@ img {
 /*End footer Styling*/
 
 /*New Todo form style*/
-.task-form {
+.task-form, .project-form {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 10px;
@@ -178,7 +178,7 @@ img {
     width: 100%;
 }
 
-.task-input {
+.task-input, .project-input {
     grid-area: 1 / 1 / 2 / 3;
 }
 
@@ -196,7 +196,7 @@ img {
     font-weight: 600;
 }
 
-.add-button, .cancel-button, .task-input {
+.add-button, .cancel-button, .task-input, .project-input {
     border: 1px solid #d4d4d4;
     border-radius: 5px;
 }
