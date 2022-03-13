@@ -144,6 +144,10 @@ li {
     justify-content: flex-start;
 }
 
+#new-task-wrapper:hover {
+    cursor: pointer;
+}
+
 .new-task-label {
     padding-left: 50px;
 }

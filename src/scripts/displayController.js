@@ -48,6 +48,8 @@ const displayController = (() => {
             taskList.removeChild(taskList.firstChild);
         }
 
+        document.querySelector('.current-project-name').textContent = project.getName();
+
         if (project.getLength() > 0) {
             for (let i = 0; i < project.getLength(); i++) {
                 let currentTodo = project.getTodo(i);

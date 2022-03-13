@@ -1,5 +1,7 @@
+import { displayController } from './displayController.js';
 import {todo} from './todo.js';
 import {todoMaker} from './todoMaker.js';
+import { projectLibrary } from './projectLibrary.js';
 
 const todoForm = (() => {
     const closeTodoForm = () => {
@@ -20,9 +22,18 @@ const todoForm = (() => {
 
             addButton.addEventListener('click', function() {
                 const newTodo = todo(document.querySelector('.task-input').value);
-                const newTodoElement = todoMaker.makeTodo(newTodo);
-                document.querySelector('.task-list').appendChild(newTodoElement);
-                closeTodoForm();
+                //const newTodoElement = todoMaker.makeTodo(newTodo);
+                //document.querySelector('.task-list').appendChild(newTodoElement);
+                
+                const currentProjectIndex = projectLibrary.getCurrentProject();
+                const currentProject = projectLibrary.getProject(currentProjectIndex);
+
+                currentProject.addTodo(newTodo);
+                displayController.displayTodoList(currentProject);                
+                
+                //Not needed because dispayController.displayTodoList already deletes
+                //everthing from the parent node, which INCLUDES the todoForm
+                //closeTodoForm();
             });
 
             const cancelButton = document.createElement('button');

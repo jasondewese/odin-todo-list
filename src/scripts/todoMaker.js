@@ -14,10 +14,6 @@ const todoMaker = (() => {
                 taskName.classList.add('task-name');
                 taskName.textContent = todo.getTask();
 
-                plusIcon.addEventListener('click', function() {
-                    
-                });
-
             taskLeft.appendChild(plusIcon);
             taskLeft.appendChild(taskName);            
             

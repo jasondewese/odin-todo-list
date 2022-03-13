@@ -3,6 +3,7 @@ import { project } from "./project.js";
 import { projectMaker } from "./projectMaker.js";
 import { projectLibrary } from "./projectLibrary.js";
 import { displayController } from "./displayController.js";
+import { todoForm } from "./todoForm.js";
 
 const todoAppInit = (() => {
     
@@ -19,6 +20,14 @@ const todoAppInit = (() => {
         
         addNewProject.addEventListener('click', function() {
             projectForm.openProjectForm();
+        });
+
+        const addNewTodo = document.querySelector('.new-task-wrapper');
+
+        addNewTodo.addEventListener('click', function() {
+            
+            todoForm.openTodoForm();
+
         });
         
     }

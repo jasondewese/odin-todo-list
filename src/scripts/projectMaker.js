@@ -34,10 +34,19 @@ const projectMaker = (() => {
 
             projectName.addEventListener('click', function() {
                 displayController.displayProject(project);
+
+                const projectList = this.parentElement.parentElement;
+                const indexOfProject = Array.from(projectList.childNodes).indexOf(this.parentElement);
+                projectLibrary.setCurrentProject(indexOfProject);
+
             });
 
             listIcon.addEventListener('click', function() {
                 displayController.displayProject(project);
+
+                const projectList = this.parentElement.parentElement;
+                const indexOfProject = Array.from(projectList.childNodes).indexOf(this.parentElement);
+                projectLibrary.setCurrentProject(indexOfProject);
             });
 
             deleteIcon.addEventListener('click', function() {
