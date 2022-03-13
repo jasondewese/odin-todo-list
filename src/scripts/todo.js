@@ -2,6 +2,7 @@ const todo = (task) => {
 
     let _task = task;
     let _dueDate;
+    let _complete = false;
 
     const getTask = () => {
         return _task;
@@ -19,7 +20,20 @@ const todo = (task) => {
         return _dueDate;
     }
 
-    return {getTask, setTask, setDueDate, getDueDate};
+    const isComplete = () => {
+        return _complete;
+    }
+
+    const changeComplete = () => {
+        if (!_complete) {
+            _complete = true;
+        }
+        else {
+            _complete = false;
+        }
+    }
+
+    return {getTask, setTask, setDueDate, getDueDate, isComplete, changeComplete};
 }
 
 export {todo};

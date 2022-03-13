@@ -9,15 +9,30 @@ const todoMaker = (() => {
         taskWrapper.classList.add('task-wrapper');
             const taskLeft = document.createElement('div');
             taskLeft.classList.add('task-left');
-                const plusIcon = document.createElement('img');
-                plusIcon.src = '../src/images/checkbox-blank-outline.svg';
-                plusIcon.alt = 'Empty check box';
-                plusIcon.classList.add('list-icon');
+                const checkBox = document.createElement('img');
+                checkBox.src = '../src/images/checkbox-blank-outline.svg';
+                checkBox.alt = 'Empty check box';
+                checkBox.classList.add('list-icon', 'checkbox');
                 const taskName = document.createElement('div');
                 taskName.classList.add('task-name');
                 taskName.textContent = todo.getTask();
 
-            taskLeft.appendChild(plusIcon);
+
+                checkBox.addEventListener('click', function() {
+                    todo.changeComplete();
+                    if (todo.isComplete()) {
+                        taskWrapper.style.textDecoration = 'line-through';
+                        checkBox.src = '../src/images/checkbox-marked-outline.svg';
+                        checkBox.alt = 'Checked check box';
+                    }
+                    else {
+                        taskWrapper.style.textDecoration = 'none';
+                        checkBox.src = '../src/images/checkbox-blank-outline.svg';
+                        checkBox.alt = 'Empty check box';
+                    }
+                })
+
+            taskLeft.appendChild(checkBox);
             taskLeft.appendChild(taskName);            
             
             const taskRight = document.createElement('div');
