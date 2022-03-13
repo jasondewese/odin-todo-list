@@ -9,8 +9,8 @@ const todoAppInit = (() => {
     const defaultProjectSetup = () => {
         const defaultProject = project('General Tasks');
         projectLibrary.addProject(defaultProject);
-        //const defaultProjectElement = projectMaker.makeProject(defaultProject);
         displayController.displayProjectList();
+        displayController.displayTodoList(defaultProject);
     }
 
     const listenerSetup = () => {

@@ -2,6 +2,8 @@ import { todoMaker } from "./todoMaker.js";
 import { projectLibrary } from "./projectLibrary.js";
 import { projectMaker } from "./projectMaker.js";
 
+
+
 const displayController = (() => {
 
     const displayProject = (project) => {
@@ -37,7 +39,27 @@ const displayController = (() => {
         }
     }
 
-    return {displayProject, displayProjectList};
+
+    const displayTodoList = (project) => {
+        const taskList = document.querySelector('.task-list');
+        
+        //empty list to display new list
+        while (taskList.firstChild) {
+            taskList.removeChild(taskList.firstChild);
+        }
+
+        if (project.getLength() > 0) {
+            for (let i = 0; i < project.getLength(); i++) {
+                let currentTodo = project.getTodo(i);
+                let currentTodoElement = todoMaker.makeTodo(currentTodo);
+    
+                taskList.appendChild(currentTodoElement);
+            }
+        }
+        
+    }
+
+    return {displayProject, displayProjectList, displayTodoList};
 })();
 
 export {displayController};
