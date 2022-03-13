@@ -2,7 +2,7 @@ import { displayController } from "./displayController";
 import { projectLibrary } from "./projectLibrary.js";
 
 const todoMaker = (() => {
-
+    
     const makeTodo = (todo) => {
 
         const taskWrapper = document.createElement('li');
@@ -16,6 +16,17 @@ const todoMaker = (() => {
                 const taskName = document.createElement('div');
                 taskName.classList.add('task-name');
                 taskName.textContent = todo.getTask();
+
+                if (todo.isComplete()) {
+                    taskWrapper.style.textDecoration = 'line-through';
+                    checkBox.src = '../src/images/checkbox-marked-outline.svg';
+                    checkBox.alt = 'Checked check box';
+                }
+                else {
+                    taskWrapper.style.textDecoration = 'none';
+                    checkBox.src = '../src/images/checkbox-blank-outline.svg';
+                    checkBox.alt = 'Empty check box';
+                }
 
 
                 checkBox.addEventListener('click', function() {

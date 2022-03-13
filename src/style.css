@@ -173,7 +173,7 @@ li {
     height: 1.5rem;
 }
 
-.list-icon:hover, .project-name:hover, .new-project-wrapper:hover, .check-lists-item:hover, button:hover {
+.list-icon:hover, .project-name:hover, .new-project-wrapper:hover, .check-lists-item:hover, button:hover, .date {
     cursor: pointer;
 }
 /*End Main Styling*/
