@@ -1,5 +1,6 @@
 import { displayController } from "./displayController";
 import { projectLibrary } from "./projectLibrary.js";
+import { dates } from "./dates.js";
 
 const todoMaker = (() => {
     
@@ -50,11 +51,32 @@ const todoMaker = (() => {
             taskRight.classList.add('task-right');
                 const date = document.createElement('div');
                 date.classList.add('date');
-                date.textContent = 'No due date';
+
+
+                if (todo.getDueDate() != '') {
+                    let day = todo.getDueDate().getUTCDate();
+                    let month = todo.getDueDate().getMonth();
+                    let year = todo.getDueDate().getFullYear();
+
+                    if (day === 1) {
+                        month++;
+                    }
+                    date.textContent = `${month+1} / ${day} / ${year}`;
+                }
+                else {
+                    date.textContent = 'No due date';
+                }
+                
+
+
                 const deleteIcon = document.createElement('img');
                 deleteIcon.src = '../src/images/delete.svg';
                 deleteIcon.alt = 'Trash can delete icon';
                 deleteIcon.classList.add('list-icon');
+
+                date.addEventListener('click', function(event) {
+                    dates.openDateInput(event, todo);
+                });
 
                 deleteIcon.addEventListener('click', function() {
                     /*

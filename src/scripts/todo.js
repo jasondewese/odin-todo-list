@@ -1,7 +1,7 @@
 const todo = (task) => {
 
     let _task = task;
-    let _dueDate;
+    let _dueDate = '';
     let _complete = false;
 
     const getTask = () => {
