@@ -1,3 +1,6 @@
+import { displayController } from "./displayController";
+import { projectLibrary } from "./projectLibrary.js";
+
 const todoMaker = (() => {
 
     const makeTodo = (todo) => {
@@ -26,6 +29,26 @@ const todoMaker = (() => {
                 deleteIcon.src = '../src/images/delete.svg';
                 deleteIcon.alt = 'Trash can delete icon';
                 deleteIcon.classList.add('list-icon');
+
+                deleteIcon.addEventListener('click', function() {
+                    /*
+                    const projectList = this.parentElement.parentElement;
+                    const indexOfProject = Array.from(projectList.childNodes).indexOf(this.parentElement);
+                    projectLibrary.removeProject( indexOfProject );
+                    displayController.displayProjectList();
+                    */
+
+                    const todoList = this.parentElement.parentElement.parentElement;
+                    const todoWrapper = this.parentElement.parentElement;
+                    const indexOfTodo = Array.from(todoList.childNodes).indexOf(todoWrapper);
+
+                    const currentProjectIndex = projectLibrary.getCurrentProject();
+                    const currentProject = projectLibrary.getProject(currentProjectIndex);
+
+                    currentProject.removeTodo(indexOfTodo);
+
+                    displayController.displayTodoList(currentProject);
+                });
 
             taskRight.appendChild(date);
             taskRight.appendChild(deleteIcon);    

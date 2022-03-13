@@ -16,7 +16,7 @@ const project = (name) => {
         _todoList.push(todo);
     }
 
-    const deleteTodo = (index) => {
+    const removeTodo = (index) => {
         _todoList.splice(index,1);
     }
 
@@ -28,7 +28,7 @@ const project = (name) => {
         return _todoList[index];
     }
 
-    return {getName, setName, addTodo, deleteTodo, getLength, getTodo};
+    return {getName, setName, addTodo, removeTodo, getLength, getTodo};
 
 }
 
