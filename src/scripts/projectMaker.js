@@ -30,6 +30,7 @@ const projectMaker = (() => {
             deleteIcon.src = '../src/images/delete.svg';
             deleteIcon.alt = 'Trash can delete logo';
             deleteIcon.classList.add('list-icon');
+            deleteIcon.classList.add('delete-icon');
 
             projectName.addEventListener('click', function() {
                 displayController.displayProject(project);
@@ -40,7 +41,10 @@ const projectMaker = (() => {
             });
 
             deleteIcon.addEventListener('click', function() {
-                //projectLibrary.removeProject(  );
+                const projectList = this.parentElement.parentElement;
+                const indexOfProject = Array.from(projectList.childNodes).indexOf(this.parentElement);
+                projectLibrary.removeProject( indexOfProject );
+                displayController.displayProjectList();
             });
 
         projectWrapper.appendChild(listIcon);

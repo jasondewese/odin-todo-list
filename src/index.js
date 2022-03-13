@@ -8,45 +8,11 @@ import { projectMaker } from './scripts/projectMaker.js';
 import { projectForm } from './scripts/projectForm.js';
 import { projectLibrary } from './scripts/projectLibrary.js';
 import { displayController } from './scripts/displayController.js';
+import { todoAppInit } from './scripts/todoAppInit.js';
 
+todoAppInit.defaultProjectSetup();
+todoAppInit.listenerSetup();
 
-const myTask = todo('laundry');
-
-const newTodo = todoMaker.makeTodo(myTask);
-
-document.querySelector('.task-list').appendChild(newTodo);
-
-const form = todoForm.openTodoForm();
-
-form.firstChild.value = 'hello';
-
-
-const newProject = project("Chores");
-
-newProject.addTodo(myTask);
-const todo2 = todo("dishes");
-newProject.addTodo(todo2);
-
-console.log(newProject.getTodo(0).getTask());
-console.log(newProject.getTodo(1).getTask());
-
-const newProjectElement = projectMaker.makeProject(newProject);
-document.querySelector('.projects-list').appendChild(newProjectElement);
-
-const newProjectForm = projectForm.openProjectForm();
-
-projectLibrary.addProject(newProject);
-
-console.log( projectLibrary.getProject(0).getName() );
-
-const project2 = project("Homework");
-project2.addTodo(todo("math"));
-project2.addTodo(todo("science"));
-project2.addTodo(todo("english"));
-
-projectLibrary.addProject(project2);
-
-console.log( projectLibrary.getProject(1).getTodo(2).getTask() );
 
 //displayController.displayProject(project2);
 
