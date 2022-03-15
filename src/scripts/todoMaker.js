@@ -12,7 +12,7 @@ const todoMaker = (() => {
             const taskLeft = document.createElement('div');
             taskLeft.classList.add('task-left');
                 const checkBox = document.createElement('img');
-                checkBox.src = '../src/images/checkbox-blank-outline.svg';
+                checkBox.src = '../dist/images/checkbox-blank-outline.svg';
                 checkBox.alt = 'Empty check box';
                 checkBox.classList.add('list-icon', 'checkbox');
                 const taskName = document.createElement('div');
@@ -21,12 +21,12 @@ const todoMaker = (() => {
 
                 if (todo.isComplete()) {
                     taskWrapper.style.textDecoration = 'line-through';
-                    checkBox.src = '../src/images/checkbox-marked-outline.svg';
+                    checkBox.src = '../dist/images/checkbox-marked-outline.svg';
                     checkBox.alt = 'Checked check box';
                 }
                 else {
                     taskWrapper.style.textDecoration = 'none';
-                    checkBox.src = '../src/images/checkbox-blank-outline.svg';
+                    checkBox.src = '../dist/images/checkbox-blank-outline.svg';
                     checkBox.alt = 'Empty check box';
                 }
 
@@ -36,12 +36,12 @@ const todoMaker = (() => {
                     dataStorage.saveLibrary();
                     if (todo.isComplete()) {
                         taskWrapper.style.textDecoration = 'line-through';
-                        checkBox.src = '../src/images/checkbox-marked-outline.svg';
+                        checkBox.src = '../dist/images/checkbox-marked-outline.svg';
                         checkBox.alt = 'Checked check box';
                     }
                     else {
                         taskWrapper.style.textDecoration = 'none';
-                        checkBox.src = '../src/images/checkbox-blank-outline.svg';
+                        checkBox.src = '../dist/images/checkbox-blank-outline.svg';
                         checkBox.alt = 'Empty check box';
                     }
                 })
@@ -72,7 +72,7 @@ const todoMaker = (() => {
 
 
                 const deleteIcon = document.createElement('img');
-                deleteIcon.src = '../src/images/delete.svg';
+                deleteIcon.src = '../dist/images/delete.svg';
                 deleteIcon.alt = 'Trash can delete icon';
                 deleteIcon.classList.add('list-icon');
 
