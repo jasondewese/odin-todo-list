@@ -12,10 +12,6 @@ import { todoAppInit } from './scripts/todoAppInit.js';
 
 todoAppInit.runTodoApp();
 
-
-
-//displayController.displayProject(project2);
-
 /*
 Icon Credits:
     format-list-checks: Austin Andrews @Templarian
