@@ -59,12 +59,14 @@ const dataStorage = (() => {
 
                 for (let j = 0; j < loadedLibrary[i]._todoList.length; j++) {
                     let currentTodo = todo(loadedLibrary[i]._todoList[j]._task);
-                    let todoDate = new Date(loadedLibrary[i]._todoList[j]._dueDate);
-                    
-                    if (todoDate === '' || todoDate === null) {
+
+                    let todoDate = loadedLibrary[i]._todoList[j]._dueDate;
+
+                    if (todoDate === '' || todoDate === null || todoDate == 'No due date') {
                         currentTodo.setDueDate('No due date');
                     }
                     else {
+                        todoDate = new Date(todoDate);
                         currentTodo.setDueDate(todoDate);
                     }
                     

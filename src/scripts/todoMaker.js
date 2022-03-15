@@ -54,7 +54,6 @@ const todoMaker = (() => {
                 const date = document.createElement('div');
                 date.classList.add('date');
 
-
                 if (todo.getDueDate() != '' && todo.getDueDate() != null && todo.getDueDate() != 'No due date') {
                     let day = todo.getDueDate().getUTCDate();
                     let month = todo.getDueDate().getMonth();
