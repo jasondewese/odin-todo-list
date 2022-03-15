@@ -26,7 +26,11 @@ const projectLibrary = (() => {
         return _projectList.length;
     }
 
-    return {addProject, removeProject, getProject, getCurrentProject, setCurrentProject, getProjectListLength};
+    const getProjectList = () => {
+        return _projectList;
+    }
+
+    return {getProjectList, addProject, removeProject, getProject, getCurrentProject, setCurrentProject, getProjectListLength};
 })();
 
 export {projectLibrary};

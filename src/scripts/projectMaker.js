@@ -8,6 +8,7 @@
 
 import { displayController } from "./displayController";
 import { projectLibrary } from "./projectLibrary.js";
+import { dataStorage } from './dataStorage.js';
 
 
 const projectMaker = (() => {
@@ -53,6 +54,7 @@ const projectMaker = (() => {
                 const projectList = this.parentElement.parentElement;
                 const indexOfProject = Array.from(projectList.childNodes).indexOf(this.parentElement);
                 projectLibrary.removeProject( indexOfProject );
+                dataStorage.saveLibrary();
                 displayController.displayProjectList();
             });
 

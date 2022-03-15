@@ -1,6 +1,7 @@
 import { displayController } from "./displayController";
 import { projectLibrary } from "./projectLibrary.js";
 import { dates } from "./dates.js";
+import { dataStorage } from './dataStorage.js';
 
 const todoMaker = (() => {
     
@@ -32,6 +33,7 @@ const todoMaker = (() => {
 
                 checkBox.addEventListener('click', function() {
                     todo.changeComplete();
+                    dataStorage.saveLibrary();
                     if (todo.isComplete()) {
                         taskWrapper.style.textDecoration = 'line-through';
                         checkBox.src = '../src/images/checkbox-marked-outline.svg';
@@ -53,7 +55,7 @@ const todoMaker = (() => {
                 date.classList.add('date');
 
 
-                if (todo.getDueDate() != '') {
+                if (todo.getDueDate() != '' && todo.getDueDate() != null && todo.getDueDate() != 'No due date') {
                     let day = todo.getDueDate().getUTCDate();
                     let month = todo.getDueDate().getMonth();
                     let year = todo.getDueDate().getFullYear();
@@ -62,6 +64,7 @@ const todoMaker = (() => {
                         month++;
                     }
                     date.textContent = `${month+1} / ${day} / ${year}`;
+                    dataStorage.saveLibrary();
                 }
                 else {
                     date.textContent = 'No due date';
@@ -94,7 +97,7 @@ const todoMaker = (() => {
                     const currentProject = projectLibrary.getProject(currentProjectIndex);
 
                     currentProject.removeTodo(indexOfTodo);
-
+                    dataStorage.saveLibrary();
                     displayController.displayTodoList(currentProject);
                 });
 

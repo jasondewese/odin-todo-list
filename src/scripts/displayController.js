@@ -58,10 +58,14 @@ const displayController = (() => {
                 taskList.appendChild(currentTodoElement);
             }
         }
-        
     }
 
-    return {displayProject, displayProjectList, displayTodoList};
+    const displayAllData = () => {
+        displayProjectList();
+        displayProject(projectLibrary.getProject(0));
+    }
+
+    return {displayProject, displayProjectList, displayTodoList, displayAllData};
 })();
 
 export {displayController};

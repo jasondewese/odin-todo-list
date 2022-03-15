@@ -33,7 +33,11 @@ const todo = (task) => {
         }
     }
 
-    return {getTask, setTask, setDueDate, getDueDate, isComplete, changeComplete};
+    const setComplete = (val) => {
+        _complete = val;
+    }
+
+    return {getTask, setTask, setDueDate, getDueDate, isComplete, changeComplete, setComplete};
 }
 
 export {todo};

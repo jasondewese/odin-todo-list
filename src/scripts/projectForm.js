@@ -1,6 +1,7 @@
 import { project } from "./project.js";
 import { projectMaker } from "./projectMaker.js";
 import { projectLibrary } from "./projectLibrary.js";
+import { dataStorage } from "./dataStorage.js";
 
 const projectForm = (() => {
     const closeProjectForm = () => {
@@ -25,6 +26,8 @@ const projectForm = (() => {
                 document.querySelector('.projects-list').appendChild(newProjectElement);
 
                 projectLibrary.addProject(newProject);
+
+                dataStorage.saveLibrary();
 
                 closeProjectForm();
             });

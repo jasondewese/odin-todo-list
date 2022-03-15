@@ -10,8 +10,8 @@ import { projectLibrary } from './scripts/projectLibrary.js';
 import { displayController } from './scripts/displayController.js';
 import { todoAppInit } from './scripts/todoAppInit.js';
 
-todoAppInit.defaultProjectSetup();
-todoAppInit.listenerSetup();
+todoAppInit.runTodoApp();
+
 
 
 //displayController.displayProject(project2);

@@ -2,6 +2,7 @@ import { displayController } from './displayController.js';
 import {todo} from './todo.js';
 import {todoMaker} from './todoMaker.js';
 import { projectLibrary } from './projectLibrary.js';
+import { dataStorage } from './dataStorage.js';
 
 const todoForm = (() => {
     const closeTodoForm = () => {
@@ -29,6 +30,9 @@ const todoForm = (() => {
                 const currentProject = projectLibrary.getProject(currentProjectIndex);
 
                 currentProject.addTodo(newTodo);
+
+                dataStorage.saveLibrary();
+
                 displayController.displayTodoList(currentProject);                
                 
                 //Not needed because dispayController.displayTodoList already deletes

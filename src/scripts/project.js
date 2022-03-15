@@ -28,7 +28,11 @@ const project = (name) => {
         return _todoList[index];
     }
 
-    return {getName, setName, addTodo, removeTodo, getLength, getTodo};
+    const getTodoList = () => {
+        return _todoList;
+    }
+
+    return {getName, setName, addTodo, removeTodo, getLength, getTodo, getTodoList};
 
 }
 
